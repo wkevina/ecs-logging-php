@@ -55,9 +55,9 @@ class ElasticCommonSchemaFormatter extends NormalizerFormatter
     }
 
     /** @inheritDoc */
-    protected function normalize($data, int $depth = 0)
+    protected function normalize($data, $depth = 0)
     {
-        if ($depth > $this->maxNormalizeDepth) {
+        if ($depth > 9) { // hardcoded to 9 in parent class
             return parent::normalize($data, $depth);
         }
 
